@@ -5,6 +5,11 @@ const nextConfig = {
       config.externals.push('pino')
     }
     return config
+  },
+  experimental: {
+    serverComponentsExternalPackages: [
+      'newrelic'
+    ]
   }
 }
 
