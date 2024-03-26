@@ -22,6 +22,17 @@ import pino from 'pino';
 export const logger = pino();
 ```
 
+Instrument `Pino` properly in `next.config.mjs`
+
+```js
+webpack: (config) => {
+  if (config.target.includes('node')) {
+    config.externals.push('pino');
+  }
+  return config;
+};
+```
+
 Write logs
 
 ```typescript
